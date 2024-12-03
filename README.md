@@ -5,3 +5,4 @@ This repository contains my work and exercises for the ITI C++ course, including
 ## Labs
 
 - **Lab 1**: C++ Basics And OOP (Encapsulation)
+- **Lab 2**: C++ classes And OOP

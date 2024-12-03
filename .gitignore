@@ -1,8 +1,15 @@
-# ignore configration and vscode files
+# Ignore configration and vscode files
 .vscode/
 
-# ignore compiled and executable files
+# Ignore compiled and executable files
 *.out
 *.exe
 *.o
 main
+test*
+
+# Ignore used libraries
+conio.h
+
+# Ignore testing files
+test.cpp
