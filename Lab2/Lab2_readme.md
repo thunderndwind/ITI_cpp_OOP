@@ -2,8 +2,8 @@
 
 ## Objectives:
 
-- Learn about c++ class.
-- Practice with c++ class costructors and destructor.
+- Learn about C++ class.
+- Practice with C++ class costructors and destructor.
 - Understand and implement the concept of Singleton in Object-Oriented Programming (OOP).
 - Implement Stack with classes.
 

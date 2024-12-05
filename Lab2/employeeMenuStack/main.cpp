@@ -37,12 +37,15 @@ private:
     int top;
     int size;
 
+    static int createdStacks;
+
 public:
     Stack(int size)
     {
         this->size = size;
         employees = new Employee[size];
         top = -1;
+        createdStacks++;
     }
 
     ~Stack()
@@ -91,6 +94,18 @@ public:
     bool isFull()
     {
         return top == size - 1;
+    }
+
+    bool isUnique(int id)
+    {
+        for (int i = top; i >= 0; i--)
+        {
+            if (this->employees[i].code == id)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 };
 
@@ -141,7 +156,8 @@ unsigned int getEmployeeCode()
 {
     unsigned int code;
     restoreNormalMode();
-    while (true)
+    bool isvalid = false;
+    while (!isvalid)
     {
         cout << "Enter employee code (positive integer): ";
         cin >> code;
@@ -153,7 +169,7 @@ unsigned int getEmployeeCode()
         }
         else
         {
-            break;
+            isvalid = true;
         }
     }
     setRawMode();
@@ -211,6 +227,8 @@ void centerText(const string &text)
         cout << " ";
     cout << text << endl;
 }
+
+int Stack::createdStacks = 0;
 
 int main()
 {
