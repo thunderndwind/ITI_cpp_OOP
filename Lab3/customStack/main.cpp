@@ -59,6 +59,14 @@ public:
         createdStacks++;
     }
 
+    Stack(Stack &old)
+    {
+        this->size = this->size;
+        employees = new Employee[size];
+        top = -1;
+        createdStacks++;
+    }
+
     ~Stack()
     {
         delete[] employees;
@@ -84,7 +92,6 @@ public:
     }
     void operator=(Stack &old)
     {
-        cout << "= operator called\n";
     }
 
     void printStack()

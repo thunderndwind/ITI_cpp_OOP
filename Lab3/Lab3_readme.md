@@ -1,4 +1,4 @@
-# Lab 1: Constructors And Operators Overload
+# Lab 3: Constructors And Operators Overload
 
 ## Objectives:
 

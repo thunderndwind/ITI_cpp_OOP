@@ -1,4 +1,4 @@
-# Lab 1: C++ classes And OOP
+# Lab 2: C++ classes And OOP
 
 ## Objectives:
 
