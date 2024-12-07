@@ -14,7 +14,7 @@
 
 1. Update complex (class) with operators overloading.
 
-2. Update Stack (class) with operators overloading.
+2. Update Stack (class) with copy constructor.
 
 3. Implement List class with push, pop methods and unlimited size.
 

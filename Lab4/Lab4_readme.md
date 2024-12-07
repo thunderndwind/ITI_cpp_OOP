@@ -1,4 +1,4 @@
-# Lab 4: Constructors And Operators Overload
+# Lab 4: c++ Relations (Association, Aggregation, Composition)
 
 ## Objectives:
 
@@ -12,4 +12,16 @@
 
 ## Tasks:
 
-1. Make a Picture class with diffrent shapes to be drawn.
+1. Make a `Picture` class with different shapes to be drawn.
+
+![Picture Diagram](pictureDrawer/printedShapes.png)
+
+## Notes:
+
+- You can build (compile) the lab using
+
+```bash
+g++ -o main main.cpp -lSDL2.
+```
+
+- Run it with ./main

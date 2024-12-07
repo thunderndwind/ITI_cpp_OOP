@@ -13,13 +13,9 @@ private:
     Circle *pCircles;
     Rectangle *pRects;
     Line *pLines;
-    Color defaultColor;
 
 public:
-    Picture(Color defaultColor = Color::RED)
-        : cNum(0), rNum(0), lNum(0), pCircles(nullptr), pRects(nullptr), pLines(nullptr), defaultColor(defaultColor)
-    {
-    }
+    Picture() : cNum(0), rNum(0), lNum(0), pCircles(nullptr), pRects(nullptr), pLines(nullptr) {}
 
     void setCircles(int cn, Circle *pC)
     {
@@ -43,17 +39,14 @@ public:
     {
         for (int i = 0; i < cNum; i++)
         {
-            g.setColor(defaultColor);
             pCircles[i].draw(g);
         }
         for (int i = 0; i < rNum; i++)
         {
-            g.setColor(defaultColor);
             pRects[i].draw(g);
         }
         for (int i = 0; i < lNum; i++)
         {
-            g.setColor(defaultColor);
             pLines[i].draw(g);
         }
     }

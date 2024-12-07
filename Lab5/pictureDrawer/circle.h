@@ -2,25 +2,23 @@
 #define CIRCLE_H
 
 #include "customGraphics.h"
-#include "point.h"
+#include "shape.h"
 
-class Circle
+class Circle : public Shape
 {
 private:
-    Point center;
-    int radius;
+    int x, y, radius;
 
 public:
-    Circle(int x, int y, int radius)
-        : center(x, y), radius(radius) {}
+    Circle(int x, int y, int radius, Color color)
+        : x(x), y(y), radius(radius), Shape(color) {}
 
     void draw(Graphics &g)
     {
+        g.setColor(color);
         int dx = radius - 1;
         int dy = 0;
         int err = dx - (radius << 1);
-        int x = center.getX();
-        int y = center.getY();
 
         while (dx >= dy)
         {

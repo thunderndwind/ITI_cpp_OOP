@@ -27,6 +27,12 @@ public:
         netSalary = 0;
     }
 
+    Employee(Employee &old)
+    {
+        this->code = old.code;
+        customStrcpy(this->name, old.name, 39);
+        this->netSalary = old.netSalary;
+    }
     Employee(unsigned int c, const char *n, unsigned int s)
     {
         code = c;
@@ -61,10 +67,17 @@ public:
 
     Stack(Stack &old)
     {
-        this->size = this->size;
-        employees = new Employee[size];
-        top = -1;
-        createdStacks++;
+        if (this != &old)
+        {
+            size = old.size;
+            employees = new Employee[old.size];
+            for (unsigned int i = 0; i <= old.top; ++i)
+            {
+                employees[i] = old.employees[i];
+            }
+            top = old.top;
+            createdStacks++;
+        }
     }
 
     ~Stack()
@@ -90,8 +103,21 @@ public:
         }
         return employees[top--];
     }
-    void operator=(Stack &old)
+
+    Stack operator=(Stack &old)
     {
+        if (this != &old)
+        {
+            delete[] this->employees;
+            this->size = old.size;
+            employees = new Employee[old.size];
+            for (unsigned int i = 0; i <= old.top; ++i)
+            {
+                this->employees[i] = old.employees[i];
+            }
+            this->top = old.top;
+        }
+        return *this;
     }
 
     void printStack()
@@ -148,11 +174,11 @@ void viewContentByReference(Stack &stack)
     stack.printStack();
 }
 
-void viewContentByValueNoCopy(Stack stack)
-{
-    cout << "Viewing content by value (no copy constructor):" << endl;
-    stack.printStack();
-}
+// void viewContentByValueNoCopy(Stack stack)
+// {
+//     cout << "Viewing content by value (no copy constructor):" << endl;
+//     stack.printStack();
+// }
 
 void viewContentByValueWithCopy(Stack stack)
 {
@@ -170,7 +196,7 @@ int main()
     Employee emp3(3, "Zaki", 70000);
 
     Stack stack(5);
-    Stack stack2(1);
+    Stack stack2(4);
     stack.push(emp1);
     stack.push(emp2);
     stack.push(emp3);
@@ -179,12 +205,14 @@ int main()
     // Viewing content using different methods
     cout << "main Stack =======\n";
     viewContentByReference(stack);
-    viewContentByValueNoCopy(stack);
-    // viewContentByValueWithCopy(stack);
+    viewContentByValueWithCopy(stack);
+    // viewContentByValueNoCopy(stack);
 
+    // viewContentByValueWithCopy(stack);
     cout << "second Stack =======\n";
     viewContentByReference(stack2);
-    viewContentByValueNoCopy(stack2);
+    viewContentByValueWithCopy(stack2);
+    // viewContentByValueNoCopy(stack2);
 
     // Stack created and destroyed count
     cout << "Stacks created: " << Stack::getCreatedStacks() << endl;

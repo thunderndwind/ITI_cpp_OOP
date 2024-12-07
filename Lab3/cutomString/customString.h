@@ -15,7 +15,6 @@ public:
     ~customString();
 
     unsigned int getLength() const;
-
     customString &operator=(const customString &other);
     customString operator+(const customString &other) const;
     bool operator==(const customString &other) const;
@@ -31,7 +30,7 @@ private:
 //---------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------
 
-#include "customString.h"
+// #include "customString.h"
 
 customString::customString()
 {

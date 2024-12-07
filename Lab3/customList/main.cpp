@@ -1,6 +1,8 @@
 #include <iostream>
 #include "customList.h"
 
+using namespace std;
+
 int main()
 {
     customList list1;
@@ -12,29 +14,29 @@ int main()
     list2.push(40);
     list2.push(50);
 
-    std::cout << "List 1 Length: " << list1.getLength() << std::endl;
-    std::cout << "List 2 Length: " << list2.getLength() << std::endl;
+    cout << "List 1 Length: " << list1.getLength() << endl;
+    cout << "List 2 Length: " << list2.getLength() << endl;
 
     customList list3 = list1 + list2;
-    std::cout << "List 3 Length (after concatenation): " << list3.getLength() << std::endl;
+    cout << "List 3 Length (after concatenation): " << list3.getLength() << endl;
 
-    std::cout << "List 3 content:" << std::endl;
+    cout << "List 3 content:" << endl;
     for (unsigned int i = 0; i < list3.getLength(); ++i)
     {
-        std::cout << list3.get(i) << std::endl;
+        cout << list3.get(i) << endl;
     }
 
     if (list1 == list2)
     {
-        std::cout << "List 1 and List 2 are equal" << std::endl;
+        cout << "List 1 and List 2 are equal" << endl;
     }
     else
     {
-        std::cout << "List 1 and List 2 are not equal" << std::endl;
+        cout << "List 1 and List 2 are not equal" << endl;
     }
 
     list1.pop();
-    std::cout << "List 1 Length after pop: " << list1.getLength() << std::endl;
+    cout << "List 1 Length after pop: " << list1.getLength() << endl;
 
     return 0;
 }

@@ -1,21 +1,24 @@
-#include <iostream>
 #include "picture.h"
-#include "graphics.h"
-using namespace std;
+#include "customGraphics.h"
 
 int main()
 {
-    Picture myPic;
+    Graphics graphics("Shapes", 800, 600);
+    // graphics.setColor(Color::LIGHTBLUE);
 
-    Circle cArr[3] = {Circle(50, 50, 50), Circle(200, 100, 100), Circle(420, 50, 30)};
-    Rectangle rArr[2] = {Rectangle(30, 40, 170, 100), Rectangle(420, 50, 500, 300)};
-    Line lArr[2] = {Line(420, 50, 300, 300), Line(40, 500, 500, 400)};
+    Circle circles[2] = {Circle(200, 200, 50), Circle(400, 400, 75)};
+    Rectangle rectangles[2] = {Rectangle(100, 100, 200, 200), Rectangle(300, 300, 500, 500)};
+    Line lines[2] = {Line(50, 50, 200, 200), Line(400, 50, 600, 200)};
 
-    myPic.setCircles(3, cArr);
-    myPic.setRects(2, rArr);
-    myPic.setLines(2, lArr);
+    Picture picture;
+    picture.setCircles(2, circles);
+    picture.setRects(2, rectangles);
+    picture.setLines(2, lines);
 
-    myPic.paint();
+    graphics.cleardevice();
+    picture.paint(graphics);
+    graphics.refresh();
 
+    SDL_Delay(5000);
     return 0;
 }

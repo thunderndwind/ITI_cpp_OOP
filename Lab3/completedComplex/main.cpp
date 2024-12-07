@@ -31,6 +31,8 @@ public: // publicate methods
     // Copy constructor
     Complex(Complex &c)
     {
+        this->real = c.real;
+        this->img = c.img;
     }
 
     // Destructor
@@ -170,20 +172,21 @@ public: // publicate methods
         this->img = this->img - c.img;
     }
 
-    void operator=(Complex s)
+    void operator=(Complex c)
     {
-        this->real = s.real;
-        this->img = s.img;
+        this->real = c.real;
+        this->img = c.img;
     }
 
-    bool operator==(Complex s)
+    bool operator==(Complex c)
     {
-        return (this->real == s.real && this->img == s.img);
+        return (this->real == c.real && this->img == c.img);
     }
 
     operator float()
     {
-        return real;
+        // return (float)real;
+        return static_cast<float>(real);
     }
 
     void display()
@@ -254,17 +257,6 @@ int main()
     complex1.display();
     complex2.display();
 
-    // complex1.setComplex(1, 1);
-    // complex2.setComplex(3, 3);
-
-    // // getting first complex data
-    // complex1.setReal(validateInteger("Enter real part for the first complex number: "));
-    // complex1.setImaginary(validateInteger("Enter imaginary part for the first complex number: "));
-
-    // // getting second complex data
-    // complex2.setReal(validateInteger("Enter real part for the second complex number: "));
-    // complex2.setImaginary(validateInteger("Enter imaginary part for the second complex number: "));
-
     Complex *complex3 = new Complex(0, 0);
     *complex3 = complex1 + complex2;
 
@@ -274,6 +266,18 @@ int main()
     *complex3 = complex1.subtract(complex2);
     cout << "Sub of the two complex numbers is: ";
     (*complex3).display();
+
+    cout << "complex1 number after += 2: ";
+    complex1 += 2;
+    complex1.display();
+
+    cout << "complex2 number after -= 2: ";
+    complex2 -= 2;
+    complex2.display();
+
+    cout << "complex1 number in float shape: " << (float)complex1 << endl;
+
+    cout << "complex1 number in float shape: " << (float)complex1.getReal() << endl;
 
     delete complex3;
 
