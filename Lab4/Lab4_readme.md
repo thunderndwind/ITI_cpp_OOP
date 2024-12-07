@@ -24,4 +24,8 @@
 g++ -o main main.cpp -lSDL2.
 ```
 
-- Run it with ./main
+- Run it with
+
+```bash
+./main
+```
