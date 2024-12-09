@@ -1,4 +1,4 @@
-# Lab 5: c++ Relations (Inheritance)
+# Lab 5: C++ Relations (Inheritance)
 
 ## Objectives:
 
@@ -6,7 +6,9 @@
 
 ## Tasks:
 
-1. Make a `Picture` class with different shapes to be drawn with base shape class.
+1. Test Base, Derived, and SecondDerived variables accessibility.
+
+2. Make a `Picture` class with different shapes to be drawn with base shape class.
 
 ![Picture Diagram](pictureDrawer/printedShapes.png)
 
