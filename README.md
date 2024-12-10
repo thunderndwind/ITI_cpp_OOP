@@ -13,3 +13,7 @@ This repository contains my work and exercises for the ITI C++ course, including
 - **Lab 4**: C++ Relations (Association, Aggregation, Composition)
 
 - **Lab 5**: C++ Relations (Inheritance)
+
+- **Lab 6**: C++ Relations (Polymorphism)
+
+- **Lab 7**: C++ Generics.
